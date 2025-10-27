@@ -3,7 +3,11 @@
 # Move to script's directory
 cd "`dirname "$0"`"
 
-read -p "Enter key: " KEY
+if [ "$#" -ge 1 ]; then
+	KEY=$1
+else
+	read -p "Enter key: " KEY
+fi
 
 stty -echo
 read -p "Enter passphrase: " PHRASE
